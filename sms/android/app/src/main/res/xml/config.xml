@@ -17,6 +17,10 @@
     <param name="android-package" value="org.apache.cordova.contacts.ContactManager"/>
   </feature>
 
+  <feature name="Geolocation">
+    <param name="android-package" value="org.apache.cordova.geolocation.Geolocation"/>
+  </feature>
+
   <feature name="Sms">
     <param name="android-package" value="com.cordova.plugins.sms.Sms"/>
   </feature>

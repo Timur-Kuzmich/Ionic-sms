@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { SMS } from "@ionic-native/sms/ngx";
 import { BackgroundMode } from '@ionic-native/background-mode/ngx';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +21,7 @@ export class AppComponent {
     private sms: SMS,
     private backgroundMode: BackgroundMode,
     private androidPermissions: AndroidPermissions,
+    private geolocation: Geolocation,
   ) {
     this.initializeApp();
   }
@@ -72,5 +74,23 @@ export class AppComponent {
   
   public async sendSMS(){
     await this.sms.send('+375293475186','I').then(() => console.log('message send'));
+  }
+  
+  public async getCoords(){
+    await this.geolocation.getCurrentPosition().then((resp) => {
+      console.log(resp.coords.latitude);
+      console.log(resp.coords.longitude);
+    }).catch((error) => {
+      console.log('Error getting location', error);
+    });
+    let watch = this.geolocation.watchPosition();
+    watch.subscribe((data) => {
+      console.log(data.coords.latitude);
+      console.log(data.coords.longitude);
+    });
+  }
+  
+  public async pushNote(){
+    
   }
 }
