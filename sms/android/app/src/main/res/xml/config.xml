@@ -25,6 +25,10 @@
     <param name="android-package" value="com.cordova.plugins.sms.Sms"/>
   </feature>
 
+  <feature name="OneSignalPush">
+    <param name="android-package" value="com.plugin.gcm.OneSignalPush"/>
+  </feature>
+
   <feature name="Device">
     <param name="android-package" value="org.apache.cordova.device.Device"/>
   </feature>
