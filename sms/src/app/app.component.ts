@@ -7,6 +7,7 @@ import {SMS} from "@ionic-native/sms/ngx";
 import {BackgroundMode} from '@ionic-native/background-mode/ngx';
 import {AndroidPermissions} from '@ionic-native/android-permissions/ngx';
 import {Geolocation} from '@ionic-native/geolocation/ngx';
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
 const {PushNotifications} = Plugins;
 
@@ -24,6 +25,7 @@ export class AppComponent {
         private backgroundMode: BackgroundMode,
         private androidPermissions: AndroidPermissions,
         private geolocation: Geolocation,
+        private localNotifications: LocalNotifications,
     ) {
         this.initializeApp();
     }
@@ -139,6 +141,14 @@ export class AppComponent {
     }
 
     public async pushNote() {
-
+        this.localNotifications.schedule({
+            id: 1,
+            title: 'Justin Rhyss',
+            text: 'Do you want to go see a movie tonight?',
+            actions: [
+                { id: 'yes', title: 'Yes', icon: 'logo-github' },
+                { id: 'no',  title: 'No', icon: 'glasses' }
+            ]
+        });
     }
 }

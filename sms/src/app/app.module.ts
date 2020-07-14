@@ -9,6 +9,7 @@ import { SMS } from '@ionic-native/sms/ngx';
 import { BackgroundMode } from '@ionic-native/background-mode/ngx'
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx'
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,11 +20,12 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
     StatusBar,
-    SplashScreen, 
+    SplashScreen,
     SMS,
     BackgroundMode,
     AndroidPermissions,
     Geolocation,
+    LocalNotifications,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
