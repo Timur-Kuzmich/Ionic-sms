@@ -7,7 +7,7 @@ import {SMS} from "@ionic-native/sms/ngx";
 import {BackgroundMode} from '@ionic-native/background-mode/ngx';
 import {AndroidPermissions} from '@ionic-native/android-permissions/ngx';
 import {Geolocation} from '@ionic-native/geolocation/ngx';
-import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
+import {LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
 const {PushNotifications} = Plugins;
 
@@ -76,6 +76,15 @@ export class AppComponent {
         PushNotifications.addListener('pushNotificationActionPerformed',
             (notification: PushNotificationActionPerformed) => {
                 console.log('Push action performed: ' + JSON.stringify(notification));
+                console.log('Color: ' + JSON.stringify(notification.notification.data.color));
+                if(notification.actionId == 'tap'){
+                    if(notification.notification.data.color == 'red'){
+                        window.open('http://localhost/home/red');
+                    }
+                    else if(notification.notification.data.color == 'blue'){
+                        window.open('http://localhost/home/blue');
+                    }
+                }
             }
         );
     }
