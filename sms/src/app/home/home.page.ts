@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild, ElementRef} from '@angular/core';
 import {MenuController} from '@ionic/angular';
 
 @Component({
@@ -7,6 +7,9 @@ import {MenuController} from '@ionic/angular';
     styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+
+    @ViewChild("topMenu", {static: false})
+    topMenu: ElementRef;
 
     constructor(private menu: MenuController) {
     }
@@ -17,21 +20,21 @@ export class HomePage {
     }
 
     logScrollStart() {
-        console.log('scroll started');
+        //console.log('scroll started');
     }
 
     logScrolling($event: any) {
         //console.log($event.detail);
         if ($event.detail.deltaY > 0) {
-            if (document.getElementsByClassName('test_header')[0].classList.contains('test_header_top')) {
-                document.getElementsByClassName('test_header')[0].classList.remove('test_header_top');
+            if ((this.topMenu as any).el.classList.contains('test_header_top')) {
+                (this.topMenu as any).el.classList.remove('test_header_top');
             }
             //console.log('top');
         } else if ($event.detail.deltaY < 0) {
-            document.getElementsByClassName('test_header')[0].classList.add('test_header_top');
+            (this.topMenu as any).el.classList.add('test_header_top');
             if ($event.detail.currentY === 0) {
-                if (document.getElementsByClassName('test_header')[0].classList.contains('test_header_top')) {
-                    document.getElementsByClassName('test_header')[0].classList.remove('test_header_top');
+                if ((this.topMenu as any).el.classList.contains('test_header_top')) {
+                    (this.topMenu as any).el.classList.remove('test_header_top');
                 }
             }
             //console.log('bot');

@@ -29,7 +29,7 @@
     </ion-header>
 
     <ion-content [scrollEvents]="true" (ionScrollStart)="logScrollStart()" (ionScroll)="logScrolling($event)">
-        <ion-item class="test_header">
+        <ion-item #topMenu class="test_header">
             <ion-icon name="wine" slot="start"></ion-icon>  
             <ion-icon name="warning" slot="start"></ion-icon>
             <ion-icon name="home" slot="start"></ion-icon>

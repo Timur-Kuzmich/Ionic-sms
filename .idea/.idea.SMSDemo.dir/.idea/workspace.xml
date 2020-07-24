@@ -27,11 +27,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cffb04db-02e6-42db-8020-2f15ee4d7a43" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/sms/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/sms/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sms/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sms/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sms/src/app/home/home-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sms/src/app/home/home-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SMSDemo.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SMSDemo.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sms/src/app/home/home.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/sms/src/app/home/home.page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sms/src/app/home/home.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sms/src/app/home/home.page.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sms/src/app/home/home.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sms/src/app/home/home.page.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,9 +68,9 @@
         <option value="$PROJECT_DIR$/sms/src/app/card/card.component.scss" />
         <option value="$PROJECT_DIR$/sms/src/index.html" />
         <option value="$PROJECT_DIR$/sms/src/app/card/card.component.html" />
-        <option value="$PROJECT_DIR$/sms/src/app/home/home.page.ts" />
         <option value="$PROJECT_DIR$/sms/src/app/home/home.page.scss" />
         <option value="$PROJECT_DIR$/sms/src/app/home/home.page.html" />
+        <option value="$PROJECT_DIR$/sms/src/app/home/home.page.ts" />
       </list>
     </option>
   </component>
@@ -142,7 +139,7 @@
       <workItem from="1595408620450" duration="5160000" />
       <workItem from="1595489933059" duration="2951000" />
       <workItem from="1595513225871" duration="1470000" />
-      <workItem from="1595589959811" duration="3260000" />
+      <workItem from="1595589959811" duration="4246000" />
     </task>
     <servers />
   </component>
