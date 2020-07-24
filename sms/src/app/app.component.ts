@@ -1,5 +1,11 @@
 import {Component} from '@angular/core';
-import {Plugins, PushNotification, PushNotificationToken, PushNotificationActionPerformed} from '@capacitor/core';
+import {
+    Plugins,
+    PushNotification,
+    PushNotificationToken,
+    PushNotificationActionPerformed,
+    Capacitor, LocalNotificationActionPerformed
+} from '@capacitor/core';
 import {Platform} from '@ionic/angular';
 import {SplashScreen} from '@ionic-native/splash-screen/ngx';
 import {StatusBar} from '@ionic-native/status-bar/ngx';
@@ -63,20 +69,43 @@ export class AppComponent {
 
         PushNotifications.addListener('registrationError',
             (error: any) => {
-                console.log('Error on registration: ' + JSON.stringify(error));
+                //console.log('Error on registration: ' + JSON.stringify(error));
             }
         );
 
         PushNotifications.addListener('pushNotificationReceived',
             (notification: PushNotification) => {
-                console.log('Push received: ' + JSON.stringify(notification));
+                //console.log('Push received: ' + JSON.stringify(notification));
+                this.localNotifications.schedule({
+                    id: Number(notification.id),
+                    title: notification.title.toString(),
+                    text: notification.body.toString(),
+                    actions: [
+                        {id: 'go', title: 'GO'}
+                    ]
+                });
+                this.localNotifications.on('go').subscribe(data => {
+                    console.log(data);
+                    if(notification.data.color == 'red'){
+                        window.open('http://localhost/home/red'); 
+                    } else if(notification.data.color == 'blue'){
+                        window.open('http://localhost/home/blue');
+                    }
+                });
+                this.localNotifications.on('tap').subscribe(data => {
+                    console.log(data);
+                    if(notification.data.color == 'red'){
+                        window.open('http://localhost/home/red');
+                    } else if(notification.data.color == 'blue'){
+                        window.open('http://localhost/home/blue');
+                    }
+                });
             }
         );
 
         PushNotifications.addListener('pushNotificationActionPerformed',
             (notification: PushNotificationActionPerformed) => {
-                console.log('Push action performed: ' + JSON.stringify(notification));
-                console.log('Color: ' + JSON.stringify(notification.notification.data.color));
+                //console.log('Push action performed: ' + JSON.stringify(notification));
                 if(notification.actionId == 'tap'){
                     if(notification.notification.data.color == 'red'){
                         window.open('http://localhost/home/red');

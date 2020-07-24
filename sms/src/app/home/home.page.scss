@@ -25,3 +25,18 @@
 #container a {
   text-decoration: none;
 }
+
+.my-custom-menu {
+  --width: 80%;
+}
+.menu_icon{
+  cursor: pointer;
+}
+.test_header{
+}
+.test_header_top{
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+}
